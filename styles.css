@@ -1,76 +1,50 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
 .container {
-    justify-self: center;
-    width: fit-content;
-    height: 150px;
-}
-.title-holder{
-    display: flex;
-    justify-content: center;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    top: 330px;
+    left: 700px;
+    background-color: black;
+    width: 600px;
 }
 
-.title-holder h1 {
+h1 {
+    font-size: 45px;
+    color: white;
     text-decoration: underline;
 }
 
-.intro-holder{
-    display: flex;
-    margin-top: 10px;
-    justify-content: center;
-}
-
-.button-holder{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+p {
+    font-size: 25px;
+    color: white;
 }
 
 button {
-    padding: 7px;
-    margin-left: 10px;
-    color: white;
-    font-size: 13px;
-    font-weight: 550;
-}
-
-#one {
-    background-color: rgb(244, 155, 76);
+    background-color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
     border: none;
 }
 
-#two {
-    background-color: rgb(128, 128, 25);
-    border: none;
+.title-holder {
+    margin-bottom: 20px;
 }
 
-#three {
-    background-color: rgb(64, 64, 234);
-    border: none;
+#resultHolder {
+    margin-bottom: 20px;
 }
 
-#four{
-    background-color: blue;
-    border: none;
-}
-
-#five{
-    background-color: blue;
-    border: none;
-}
-
-.button-holder-two{
+.title-holder, #introHolder, #resultHolder, #buttonHolder, #buttonHolderTwo {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.result-holder{
-    display: flex;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
 }

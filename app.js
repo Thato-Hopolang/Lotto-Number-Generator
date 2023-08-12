@@ -226,7 +226,7 @@ function previous() {
 };
 
 function backHome() {
-    yes()
+    yes
 
     document.getElementById("one").hidden = false;
     document.getElementById("two").hidden = false;

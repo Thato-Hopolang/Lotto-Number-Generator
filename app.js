@@ -5,8 +5,6 @@ const four = document.getElementById("four");
 const five = document.getElementById("five");
 
 const intro = document.getElementById("intro");
-const results = document.getElementById("results");
-const resultsPlus = document.getElementById("resultsPlus");
 
 //Daily Lotto
 let dailyQP = [];
@@ -74,8 +72,6 @@ let drawPowerBallLeastFrequent = powerBallLeastFrequent.sort(() => Math.random()
 let powerBallLeastFrequentPB = [ 20, 10, 7, 14, 1, 3, 17, 19, 4, 9, 8, 6, 18, 5, 15, 11, 13, 12 ];
 let drawPowerBallLeastFrequentPB = powerBallLeastFrequentPB.sort(() => Math.random() - Math.random()).slice(0, 1);
 
-//let somethings = dailyLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5)
-
 function showThese() {
     document.getElementById("four").hidden = false;
     document.getElementById("five").hidden = false;
@@ -85,7 +81,6 @@ function hideThese() {
     document.getElementById("one").hidden = true;
     document.getElementById("two").hidden = true;
     document.getElementById("three").hidden = true;
-    document.getElementById("intro").hidden = true;
 };
 document.getElementById("three").hidden = true;
 document.getElementById("four").hidden = true;
@@ -109,86 +104,91 @@ function dailyLotto() {
     one.innerText = "Quick Pick";
     two.innerText = "Most Common";
     three.innerText = "Least Common";
-    four.innerText = "Previous";
-    five.innerText = "Back Home"
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
 
     intro.innerText = "Pick the type of numbers you'd like generated.";
 
     one.onclick = dailyLottoQP;
     two.onclick = dailyLottoMC;
     three.onclick = dailyLottoLC;
-    //four.onclick = previous;
-    five.onclick = backHome;
 };
 
 function dailyLottoQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Lotto Quick Pick numbers are:" + " " + drawDailyLottoQP;
+    intro.innerText = "Your Daily Lotto Quick Pick numbers are:" + " " + drawDailyLottoQP;
     
-    four.innerText = "Generate New";
-    five.innerText = "Back Home"
-
-    //four.onclcik = generateNew;
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
     five.onclick = backHome;
 };
 
 function dailyLottoMC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Lotto Most Common numbers are:" + " " + drawDailyLottoMostFrequent;
+    intro.innerText = "Your Daily Lotto Most Common numbers are:" + " " + drawDailyLottoMostFrequent;
 
-    //four.onclcik = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
     five.onclick = backHome;
 };
 
 function dailyLottoLC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Lotto Least Common numbers are:" + " " + drawDailyLottoLeastFrequent;
+    intro.innerText = "Your Daily Lotto Least Common numbers are:" + " " + drawDailyLottoLeastFrequent;
 
-    //four.onclcik = "";
-    //five.onclick = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 function regularLotto() {
     one.innerText = "Quick Pick";
     two.innerText = "Most Common";
     three.innerText = "Least Common";
-    four.innerText = "Previous";
+    four.innerText = "Close App";
 
     one.onclick = regularLottoQP;
     two.onclick = regularLottoMC;
     three.onclick = regularLottoMC;
-    four.onclick = previous;
-    five.onclick = backHome;
 };
 
 function regularLottoQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Lotto Quick Pick numbers are:" + " " + drawregularLottoQP;
+    intro.innerText = "Your Lotto Quick Pick numbers are:" + " " + drawregularLottoQP;
 
-    //four.onclcik = "";
-    //five.onclick = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 function regularLottoMC() {
     showThese()
     hideThese();
-    results.innerText = "Your Lotto Most Common numbers are:" + " " + drawRegularLottoMostFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoMostFrequentBB;
+    intro.innerText = "Your Lotto Most Common numbers are:" + " " + drawRegularLottoMostFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoMostFrequentBB;
 
-    //four.onclick = "";
-    //five.onclick = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 function regularLottoLC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + drawRegularLottoLeastFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoBBLeastFrequent;
+    intro.innerText = "Your Daily Least Common numbers are:" + " " + drawRegularLottoLeastFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoBBLeastFrequent;
 
-    //four.onclick = "";
-    //five.onclick = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 
@@ -196,44 +196,49 @@ function powerball() {
     one.innerText = "Quick Pick";
     two.innerText = "Most Common";
     three.innerText = "Least Common";
-    four.innerText = "Previous";
+    four.innerText = "Close App";
 
     one.onclick = powerballQP;
     two.onclick = powerballMC;
     three.onclick = powerballLC;
-    //four.onclick = previous;
-    five.onclick = backHome;
 };
 
 function powerballQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Powerball Quick Pick numbers are: " + drawPowerball + " " + "And the powerball is: " + drawActualPowerballQP;
+    intro.innerText = "Your Powerball Quick Pick numbers are: " + drawPowerball + " " + "And the powerball is: " + drawActualPowerballQP;
 
-    //four.onclcik = "";
-    //five.onclick = "";
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 function powerballMC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are: " + drawPowerBallMostFrequent + " " + "And your Powerball is: " + drawPowerBallMostFrequentPB;
-    //five.onclick;
+    intro.innerText = "Your Daily Least Common numbers are: " + drawPowerBallMostFrequent + " " + "And your Powerball is: " + drawPowerBallMostFrequentPB;
+
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
 function powerballLC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are: " + drawPowerBallLeastFrequent + " " + "And your Powerball is: " + drawPowerBallLeastFrequentPB;
+    intro.innerText = "Your Daily Least Common numbers are: " + drawPowerBallLeastFrequent + " " + "And your Powerball is: " + drawPowerBallLeastFrequentPB;
+    four.innerText = "Close App";
+    five.innerText = "Back Home";
+    four.onclick = done;
+    five.onclick = backHome;
 };
 
-
-/*function previous() {
-    window.history.go(-1)
-};*/
+function done() {
+    window.close
+};
 
 function backHome() {
     location.reload()
-    //window.location.reload()
-    //document.location.reload()
 };

@@ -39,16 +39,11 @@ button {
     padding-bottom: 10px;
 }
 
-#resultHolder {
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-}
-
 #buttonHolder {
     padding-top: 5px;
 }
 
-.title-holder, #introHolder, #resultHolder, #buttonHolder, #buttonHolderTwo {
+.title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
     display: flex;
     justify-content: center;
     align-items: center;

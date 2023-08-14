@@ -8,41 +8,85 @@ const intro = document.getElementById("intro");
 const results = document.getElementById("results");
 const resultsPlus = document.getElementById("resultsPlus");
 
-let dailyLLeastFrequent = [ 17, 3, 11, 16, 7, 26, 13, 19, 35, 31, 30, 4, 8, 33, 20, 18, 23, 34 ];
-let dailyLMostFrequent = [ 6, 10, 25, 5, 12, 12, 9, 27, 22, 15, 32, 29, 36, 14, 2, 21, 1, 28, 24 ];
-
-let reglarLLeastFrequent = [ 11, 48, 23, 30, 8, 2, 14, 46, 17, 44, 24, 33, 6, 11, 29, 1, 43, 39 ];
-let reglarLLeastFrequentBB = [ 22, 19, 16, 29, 39, 2, 24, 31, 45, 47, 35,5, 14, 17, 20, 52, 30, 8 ];
-let regularLMostFrequent = [ 14, 1, 46, 49, 11, 48, 42, 13, 45, 50, 23, 29, 26, 6, 18, 2, 10, 35 ];
-let regularLMostFrequentBB = [ 22, 19, 16, 29, 39, 2, 24, 31, 45, 47, 35, 5, 14, 17, 20, 52, 30, 8 ];
-
-let powerBLeastFrequent = [ 47, 46, 48, 50, 49, 33, 39, 27, 2, 25, 30, 32, 17, 23, 14, 44, 5, 26 ];
-let powerBLeastFrequentBB = [ 20, 10, 7, 14, 1, 3, 17, 19, 4, 9, 8, 6, 18, 5, 15, 11, 13, 12 ];
-let powerBMostFrequent = [  15, 24, 12, 20, 31, 31, 11, 35, 43, 28, 34, 9, 36, 7, 8, 13, 42, 3, 41 ];
-let powerBMostFrequentBB = [ 13, 3, 16, 18, 12, 5, 17, 2, 9, 15, 11, 10, 4, 20, 6, 7, 1, 14 ];
-
+//Daily Lotto
 let dailyQP = [];
-for(let i = 0; i < 5; i++) {
+for(let i = 1; i < 6; i++) {
   dailyQP.push(Math.floor(Math.random() * 36));
 };
 
+let drawDailyLottoQP = dailyQP.filter((item, index) => 
+dailyQP.indexOf(item) === index);
+
+let dailyLottoMostFrequent = [ 6, 10, 25, 5, 12, 12, 9, 27, 22, 15, 32, 29, 36, 14, 2, 21, 1, 28, 24 ];
+let drawDailyLottoMostFrequent = dailyLottoMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+let dailyLottoLeastFrequent = [ 17, 3, 11, 16, 7, 26, 13, 19, 35, 31, 30, 4, 8, 33, 20, 18, 23, 34 ];
+let drawDailyLottoLeastFrequent = dailyLottoLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+//Regular Lotto
 let regularQP = [];
-for(let i = 0; i < 6; i++) {
+for(let i = 1; i < 7; i++) {
   regularQP.push(Math.floor(Math.random() * 52));
 };
 
+let drawregularLottoQP = regularQP.filter((item, index) => 
+regularQP.indexOf(item) === index);
+
+let regularLottoMostFrequent = [ 14, 1, 46, 49, 11, 48, 42, 13, 45, 50, 23, 29, 26, 6, 18, 2, 10, 35 ];
+let drawRegularLottoMostFrequent = regularLottoMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+let regularLottoMostFrequentBB = [ 22, 19, 16, 29, 39, 2, 24, 31, 45, 47, 35, 5, 14, 17, 20, 52, 30, 8 ];
+let drawRegularLottoMostFrequentBB = regularLottoMostFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
+
+let regularLottoLeastFrequent = [ 11, 48, 23, 30, 8, 2, 14, 46, 17, 44, 24, 33, 6, 11, 29, 1, 43, 39 ];
+let drawRegularLottoLeastFrequent = regularLottoLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+let regularLottoLeastFrequentBB = [ 22, 19, 16, 29, 39, 2, 24, 31, 45, 47, 35,5, 14, 17, 20, 52, 30, 8 ];
+let drawRegularLottoBBLeastFrequent = regularLottoLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
+
+//Powerbal
 let powerBallQP = [];
-for(let i = 0; i < 5; i++) {
-  powerBallQP.push(Math.floor(Math.random() * 50));
+for(let i = 1; i < 7; i++) {
+  powerBallQP.push(Math.floor(Math.random() * 52));
 };
 
-let actualpowerballQP = [];
-for(let i = 0; i < 1; i++) {
-  actualpowerballQP.push(Math.floor(Math.random() * 20));
+let drawPowerball = powerBallQP.filter((item, index) => 
+powerBallQP.indexOf(item) === index);
+
+//ActualPowerball
+let actualPowerballQP = [];
+for(let i = 1; i < 2; i++) {
+  actualPowerballQP.push(Math.floor(Math.random() * 20));
 };
+
+let drawActualPowerballQP = actualPowerballQP.filter((item, index) => 
+actualPowerballQP.indexOf(item) === index);
+
+let powerBallMostFrequent = [  15, 24, 12, 20, 31, 31, 11, 35, 43, 28, 34, 9, 36, 7, 8, 13, 42, 3, 41 ];
+let drawPowerBallMostFrequent = powerBallMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+let powerBallMostFrequentPB = [ 13, 3, 16, 18, 12, 5, 17, 2, 9, 15, 11, 10, 4, 20, 6, 7, 1, 14 ];
+let drawPowerBallMostFrequentPB = powerBallMostFrequentPB.sort(() => Math.random() - Math.random()).slice(0, 1);
+
+let powerBallLeastFrequent = [ 47, 46, 48, 50, 49, 33, 39, 27, 2, 25, 30, 32, 17, 23, 14, 44, 5, 26 ];
+let drawPowerBallLeastFrequent = powerBallLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+
+let powerBallLeastFrequentPB = [ 20, 10, 7, 14, 1, 3, 17, 19, 4, 9, 8, 6, 18, 5, 15, 11, 13, 12 ];
+let drawPowerBallLeastFrequentPB = powerBallLeastFrequentPB.sort(() => Math.random() - Math.random()).slice(0, 1);
 
 //let somethings = dailyLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5)
 
+function showThese() {
+    document.getElementById("four").hidden = false;
+    document.getElementById("five").hidden = false;
+};
+
+function hideThese() {
+    document.getElementById("one").hidden = true;
+    document.getElementById("two").hidden = true;
+    document.getElementById("three").hidden = true;
+    document.getElementById("intro").hidden = true;
+};
 document.getElementById("three").hidden = true;
 document.getElementById("four").hidden = true;
 document.getElementById("five").hidden = true;
@@ -56,19 +100,15 @@ one.onclick = yes;
 two.onclick = no;
 
 function yes() {
-
     intro.innerText = "What do you want to play?";
 
     one.onclick = dailyLotto;
     two.onclick = regularLotto;
     three.onclick = powerball;
-    four.onclick = previous;
-    five.onclick = backHome;
 
     one.innerText = "Daily Lotto";
     two.innerText = "Regular Lotto";
     three.innerText = "Powerball";
-    //four.innerText = "Previous";
 
     document.getElementById("three").hidden = false;
     document.getElementById("four").hidden = true;
@@ -82,18 +122,6 @@ function no() {
     document.getElementById("two").hidden = true;
 };
 
-function showThese() {
-    document.getElementById("four").hidden = false;
-    document.getElementById("five").hidden = false;
-};
-
-function hideThese() {
-    document.getElementById("one").hidden = true;
-    document.getElementById("two").hidden = true;
-    document.getElementById("three").hidden = true;
-    document.getElementById("intro").hidden = true;
-};
-
 function dailyLotto() {
     one.innerText = "Quick Pick";
     two.innerText = "Most Common";
@@ -104,15 +132,15 @@ function dailyLotto() {
 
     one.onclick = dailyLottoQP;
     two.onclick = dailyLottoMC;
-    //three.onclick = dailyLottoLC;
-    four.onclick = previous;
-    five.onclick = backHome;
+    three.onclick = dailyLottoLC;
+    //four.onclick = previous;
+    //five.onclick = backHome;
 };
 
 function dailyLottoQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Lotto Quick Pick numbers are:" + " " + dailyQP;
+    results.innerText = "Your Daily Lotto Quick Pick numbers are:" + " " + drawDailyLottoQP;
     
 
     //four.onclcik = "";
@@ -122,7 +150,7 @@ function dailyLottoQP() {
 function dailyLottoMC() {
     showThese()
     hideThese();
-    results.innerText = dailyLMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+    results.innerText = "Your Daily Lotto Most Common numbers are:" + " " + drawDailyLottoMostFrequent;
 
     //four.onclcik = "";
     //five.onclick = "";
@@ -131,7 +159,7 @@ function dailyLottoMC() {
 function dailyLottoLC() {
     showThese()
     hideThese();
-    results.innerText = dailyLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
+    results.innerText = "Your Daily Lotto Least Common numbers are:" + " " + drawDailyLottoLeastFrequent;
 
     //four.onclcik = "";
     //five.onclick = "";
@@ -153,7 +181,7 @@ function regularLotto() {
 function regularLottoQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Lotto Quick Pick numbers are:" + " " + regularQP;
+    results.innerText = "Your Lotto Quick Pick numbers are:" + " " + drawregularLottoQP;
 
     //four.onclcik = "";
     //five.onclick = "";
@@ -162,7 +190,7 @@ function regularLottoQP() {
 function regularLottoMC() {
     showThese()
     hideThese();
-    results.innerText = "Your Lotto Most Common numbers are:" + " " + regularLMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Bonus Ball is:" + " " + regularLMostFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
+    results.innerText = "Your Lotto Most Common numbers are:" + " " + drawRegularLottoMostFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoMostFrequentBB;
 
     //four.onclick = "";
     //five.onclick = "";
@@ -171,7 +199,7 @@ function regularLottoMC() {
 function regularLottoLC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + reglarLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Bonus Ball is:" + " " + reglarLLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
+    results.innerText = "Your Daily Least Common numbers are:" + " " + drawRegularLottoLeastFrequent + " " + "And your Bonus Ball is:" + " " + drawRegularLottoBBLeastFrequent;
 
     //four.onclick = "";
     //five.onclick = "";
@@ -187,14 +215,14 @@ function powerball() {
     one.onclick = powerballQP;
     two.onclick = powerballMC;
     three.onclick = powerballLC;
-    four.onclick = previous;
+    //four.onclick = previous;
     five.onclick = backHome;
 };
 
 function powerballQP() {
     showThese()
     hideThese();
-    results.innerText = "Your Powerball Quick Pick numbers are:" + " " + powerBallQP + " " + "And the powerball is:" + " " + actualpowerballQP;
+    results.innerText = "Your Powerball Quick Pick numbers are: " + drawPowerball + " " + "And the powerball is: " + drawActualPowerballQP;
 
     //four.onclcik = "";
     //five.onclick = "";
@@ -203,87 +231,23 @@ function powerballQP() {
 function powerballMC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + powerBLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Powerball is:" + " " + powerBLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
-
-    four.onclcik = generateNewPBMF;
-    //five.onclick = "";
+    results.innerText = "Your Daily Least Common numbers are: " + drawPowerBallMostFrequent + " " + "And your Powerball is: " + drawPowerBallMostFrequentPB;
+    //five.onclick;
 };
 
 function powerballLC() {
     showThese()
     hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + powerBLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Powerball is:" + " " + powerBLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
-
-    four.innerHTML = "Generate New";
-    
-    four.onclick = generateNewPBLF();
-    //five.onclick = "";
+    results.innerText = "Your Daily Least Common numbers are: " + drawPowerBallLeastFrequent + " " + "And your Powerball is: " + drawPowerBallLeastFrequentPB;
 };
 
 
-function previous() {
+/*function previous() {
     window.history.go(-1)
-};
+};*/
 
 function backHome() {
-    yes
-
-    document.getElementById("one").hidden = false;
-    document.getElementById("two").hidden = false;
-    document.getElementById("results").hidden = true;
-};
-
-function generateNewDLQP() {
-    let dailyQP = [];
-        for(let i = 0; i < 5; i++) {
-        dailyQP.push(Math.floor(Math.random() * 36));
-        };
-};
-
-function generateNewDLMF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your daily Lotto Numbers are:" + dailyLMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5);
-};
-
-function generateNewDLMF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your daily Lotto Numbers are:" + dailyLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5)
-};
-
-function generateNewRLQP() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Lotto Quick Pick numbers are:" + " " + regularQP; 
-};
-
-function generateNewRLLF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + reglarLLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Bonus Ball is:" + " " + reglarLLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
-};
-
-function generateNewRLMF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Lotto Most Common numbers are:" + " " + regularLMostFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Bonus Ball is:" + " " + regularLMostFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
-};
-
-function generateNewPBQP() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Powerball Quick Pick numbers are:" + " " + powerBallQP + " " + "And the powerball is:" + " " + actualpowerballQP; 
-};
-
-function generateNewPBLF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + powerBLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Powerball is:" + " " + powerBLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);;
-};
-
-function generateNewPBMF() {
-    showThese()
-    hideThese();
-    results.innerText = "Your Daily Least Common numbers are:" + " " + powerBLeastFrequent.sort(() => Math.random() - Math.random()).slice(0, 5) + " " + "And your Powerball is:" + " " + powerBLeastFrequentBB.sort(() => Math.random() - Math.random()).slice(0, 1);
+    location.reload()
+    //window.location.reload()
+    //document.location.reload()
 };

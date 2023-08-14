@@ -91,42 +91,26 @@ document.getElementById("three").hidden = true;
 document.getElementById("four").hidden = true;
 document.getElementById("five").hidden = true;
 
-intro.innerText = "Are you feeling lucky?";
+intro.innerText = "What do you want to play?";
 
-one.innerText = "Yes"
-two.innerText = "No"
+one.onclick = dailyLotto;
+two.onclick = regularLotto;
+three.onclick = powerball;
 
-one.onclick = yes;
-two.onclick = no;
+one.innerText = "Daily Lotto";
+two.innerText = "Regular Lotto";
+three.innerText = "Powerball";
 
-function yes() {
-    intro.innerText = "What do you want to play?";
-
-    one.onclick = dailyLotto;
-    two.onclick = regularLotto;
-    three.onclick = powerball;
-
-    one.innerText = "Daily Lotto";
-    two.innerText = "Regular Lotto";
-    three.innerText = "Powerball";
-
-    document.getElementById("three").hidden = false;
-    document.getElementById("four").hidden = true;
-    document.getElementById("five").hidden = true;
-};
-
-function no() {
-    intro.innerText = "You can't win if you don't play."
-
-    document.getElementById("one").hidden = true;
-    document.getElementById("two").hidden = true;
-};
+document.getElementById("three").hidden = false;
+document.getElementById("four").hidden = true;
+document.getElementById("five").hidden = true;
 
 function dailyLotto() {
     one.innerText = "Quick Pick";
     two.innerText = "Most Common";
     three.innerText = "Least Common";
     four.innerText = "Previous";
+    five.innerText = "Back Home"
 
     intro.innerText = "Pick the type of numbers you'd like generated.";
 
@@ -134,7 +118,7 @@ function dailyLotto() {
     two.onclick = dailyLottoMC;
     three.onclick = dailyLottoLC;
     //four.onclick = previous;
-    //five.onclick = backHome;
+    five.onclick = backHome;
 };
 
 function dailyLottoQP() {
@@ -142,9 +126,11 @@ function dailyLottoQP() {
     hideThese();
     results.innerText = "Your Daily Lotto Quick Pick numbers are:" + " " + drawDailyLottoQP;
     
+    four.innerText = "Generate New";
+    five.innerText = "Back Home"
 
-    //four.onclcik = "";
-    //five.onclick = "";
+    //four.onclcik = generateNew;
+    five.onclick = backHome;
 };
 
 function dailyLottoMC() {
@@ -153,7 +139,7 @@ function dailyLottoMC() {
     results.innerText = "Your Daily Lotto Most Common numbers are:" + " " + drawDailyLottoMostFrequent;
 
     //four.onclcik = "";
-    //five.onclick = "";
+    five.onclick = backHome;
 };
 
 function dailyLottoLC() {

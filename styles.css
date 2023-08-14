@@ -35,7 +35,8 @@ button {
 }
 
 .title-holder {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
 }
 
 #resultHolder {
@@ -43,10 +44,14 @@ button {
     padding-bottom: 10px;
 }
 
+#buttonHolder {
+    padding-top: 5px;
+}
+
 .title-holder, #introHolder, #resultHolder, #buttonHolder, #buttonHolderTwo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    gap: 10px;
+    gap: 15px;
 }

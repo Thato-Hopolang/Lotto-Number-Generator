@@ -58,16 +58,26 @@ button {
 @media (max-width: 810px) {
     
     .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        gap: 15px;
-        text-align: center;
-        opacity: 1;
+    }
+
+    body {
+        height:100vh;
     }
 }
+
+@media (max-width: 1000px) {
+    
+    .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
+        flex-direction: column;
+    }
+
+    body {
+        height:100vh;
+    }
+}
+
+
 
 .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
     display: flex;

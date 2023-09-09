@@ -3,24 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url(Images/full.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        height:100vh;
+    }
 }
 
 .container {
     padding: 20px;
-    position: relative;
     box-sizing: border-box;
-    top: 330px;
-    left: 650px;
     background-color: black;
-    width: 680px;
+    width: 650px;
     height: auto;
     opacity: 0.9;
 }
 
 h1 {
-    font-size: 45px;
+    font-size: 2.813rem;
     color: white;
     text-decoration: underline;
 }
@@ -45,6 +53,20 @@ button {
 
 #buttonHolder {
     padding-top: 5px;
+}
+
+@media (max-width: 810px) {
+    
+    .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 15px;
+        text-align: center;
+        opacity: 1;
+    }
 }
 
 .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {

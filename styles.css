@@ -18,23 +18,14 @@ body {
     padding-top: 20%;
 }
 
-@media screen and (max-width: 915px) {
-    .holder {
-        padding-top: 10%;
+@media (max-width: 400px) {
+    .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
+        display: flex;
+        flex-direction: column;
     }
 }
 
-@media screen and (max-width: 412px) {
-    .holder {
-        padding-top: 70%;
-    }
-
-    button {
-        font-size: 5px;
-    }
-}
-
-
+@media (max-width: 800px) {}
 
 .container {
     padding: 20px;

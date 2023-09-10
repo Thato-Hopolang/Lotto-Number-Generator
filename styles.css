@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body {
@@ -15,23 +16,34 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 8%;
+    padding-top: 20%;
 }
 
+
 @media (max-width: 400px) {
+
     .title-holder, #introHolder, #buttonHolder, #buttonHolderTwo {
         display: flex;
         flex-direction: column;
     }
-}
 
-@media (max-width: 800px) {
-    .container {
-        top: 300px;
+    .holder {
+        margin-top: 15%;
+        padding-top: 0%;
     }
 }
 
-@media (max-width: 1200px)
+@media (max-width: 800px) {
+    .holder {
+        padding-top: 40%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .holder {
+        padding-top: 8%;
+    }
+}
 
 .container {
     padding: 20px;
@@ -61,7 +73,7 @@ button {
 }
 
 .title-holder {
-    margin-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
